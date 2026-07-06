@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter the number of elements (n): ");
+    scanf("%d", &n);
+
+    int nums[n];
+
+    printf("Enter %d numbers: ", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &nums[i]);
+    }
+
+    int candidate = 0;
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (count == 0) {
+            candidate = nums[i];
+        }
+
+        if (nums[i] == candidate) {
+            count++;
+        } else {
+            count--;
+        }
+    }
+
+    printf("Output: %d\n", candidate);
+
+    return 0;
+}
